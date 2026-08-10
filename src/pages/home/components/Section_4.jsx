@@ -46,11 +46,11 @@ export default function Section_4() {
         {festivalData.map((festival) => (
           <SwiperSlide key={festival.contentid} className="cursor-pointer">
             <Link to={`/festivalDetail/${festival.contentid}`}>
-              <div className="h-[600px] overflow-hidden bg-gray-300 rounded-xl mt-[50px] mb-[15px] relative">
+              <div className="aspect-[3/4] overflow-hidden bg-gray-300 rounded-xl mt-[50px] mb-[15px] relative">
                 <img
                   src={festival.firstimage}
                   alt={festival.title}
-                  className="h-[100%] object-cover absolute top-0 left-0 hover:scale-105 transition"
+                  className="w-full h-full object-cover absolute top-0 left-0 hover:scale-105 transition"
                 />
                 <div className="absolute top-3 left-3">
                   <Tag name={festival.addr1?.split(" ")[0]} />

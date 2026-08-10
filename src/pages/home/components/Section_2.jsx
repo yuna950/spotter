@@ -13,8 +13,8 @@ const regions = [
     code: "26",
   },
   {
-    name: "여수",
-    code: "36",
+    name: "강릉",
+    code: "51",
   },
   {
     name: "제주",
@@ -71,13 +71,17 @@ export default function Section_2() {
         </form>
       </div>
 
-      <div className="w-full h-[700px] flex flex-wrap gap-[30px] justify-between pt-9">
+      <div className="w-[100%] h-[700px] flex flex-wrap gap-[30px] justify-between pt-9">
         {areaData.map((region) => (
-          <Link key={region.code} to={`/place/${region.code}`}>
-            <div className="group relative w-[685px] h-[300px] rounded-2xl overflow-hidden">
+          <Link
+            key={region.code}
+            to={`/place/${region.code}`}
+            className="w-[48%] h-[300px]"
+          >
+            <div className="group relative w-full h-full rounded-2xl overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full">
                 <img
-                  className="w-[100%] h-[100%] object-cover  transition-transform duration-500 group-hover:scale-110"
+                  className="w-[100%] h-[100%] object-cover transition-transform duration-500 group-hover:scale-110"
                   src={region.tour?.firstimage}
                   alt={region.name}
                 />

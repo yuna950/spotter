@@ -9,7 +9,7 @@ export default function Section_3() {
       </h2>
 
       <div className="h-[550px]  w-full mt-10  flex justify-between items-end">
-        <div className="h-full w-[40%] bg-amber-200 rounded-2xl   relative">
+        <div className="h-full w-[40%] bg-gray-300 rounded-2xl   relative">
           <div div>
             <img src="" alt="" />
           </div>
