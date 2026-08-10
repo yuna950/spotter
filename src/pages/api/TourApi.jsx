@@ -39,13 +39,23 @@ export const getTourDetail = (contentId) => {
 };
 
 // 지역기반 관광지 호출
-export const getAreaTour = (regionCode, sigunguCode) => {
+export const getAreaTour = (regionCode) => {
   return fetchTour("areaBasedList2", {
-    numOfRows: 4,
+    numOfRows: 1,
     pageNo: 1,
     arrange: "C",
     contentTypeId: 12,
     lDongRegnCd: regionCode,
-    lDongSignguCd: sigunguCode,
+  });
+};
+
+// 행사 정보 조회
+export const getFestival = () => {
+  return fetchTour("searchFestival2", {
+    numOfRows: 100,
+    pageNo: 1,
+    arrange: "C",
+    eventStartDate: "20260101",
+    eventEndDate: "20261231",
   });
 };

@@ -40,8 +40,6 @@ export default function Hero() {
     return <div>Loading...</div>;
   }
 
-  console.log(tour);
-
   return (
     <div className="max-w-[1920px] w-full flex justify-center text-white">
       <div

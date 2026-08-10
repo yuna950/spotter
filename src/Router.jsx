@@ -15,7 +15,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/festival" element={<Festival />} />
-        <Route path="/FestivalDetail" element={<FestivalDetail />} />
+        <Route path="/FestivalDetail/:contentId" element={<FestivalDetail />} />
         <Route path="/Place/:regionCode" element={<Place />} />
         <Route path="/PlaceDetail/:contentId" element={<PlaceDetail />} />
         <Route path="/ThemeDetail" element={<ThemeDetail />} />
