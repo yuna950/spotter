@@ -50,7 +50,7 @@ export default function Section_4() {
                 <img
                   src={festival.firstimage}
                   alt={festival.title}
-                  className="h-full object-cover absolute top-0 left-0 hover:scale-110 transition"
+                  className="h-[100%] object-cover absolute top-0 left-0 hover:scale-105 transition"
                 />
                 <div className="absolute top-3 left-3">
                   <Tag name={festival.addr1?.split(" ")[0]} />
