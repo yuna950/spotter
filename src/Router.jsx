@@ -20,6 +20,7 @@ export default function Router() {
         <Route path="/PlaceDetail/:contentId" element={<PlaceDetail />} />
         <Route path="/ThemeDetail" element={<ThemeDetail />} />
       </Routes>
+      <hr />
       <Footer />
     </HashRouter>
   );

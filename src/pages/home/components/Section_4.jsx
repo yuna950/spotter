@@ -21,7 +21,7 @@ export default function Section_4() {
     })();
   }, []);
 
-  console.log(festivalData);
+  // console.log(festivalData);
 
   return (
     <div className="py-[100px]">
