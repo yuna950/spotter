@@ -16,8 +16,8 @@ export default function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/festival" element={<Festival />} />
         <Route path="/FestivalDetail" element={<FestivalDetail />} />
-        <Route path="/Place" element={<Place />} />
-        <Route path="/PlaceDetail" element={<PlaceDetail />} />
+        <Route path="/Place/:regionCode" element={<Place />} />
+        <Route path="/PlaceDetail/:contentId" element={<PlaceDetail />} />
         <Route path="/ThemeDetail" element={<ThemeDetail />} />
       </Routes>
       <Footer />
