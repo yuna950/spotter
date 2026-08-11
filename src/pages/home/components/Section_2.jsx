@@ -59,7 +59,7 @@ export default function Section_2() {
   return (
     <div className="py-[100px]">
       <div className="flex justify-between items-end">
-        <h2 className="text-[30px] lg:text-[50px] xl:text-[70px] font-bold  ">
+        <h2 className="text-[30px] lg:text-[50px] xl:text-[60px] font-bold  ">
           지역별 여행
         </h2>
 

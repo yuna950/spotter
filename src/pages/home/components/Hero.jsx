@@ -48,14 +48,14 @@ export default function Hero() {
           background: `linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0.00) 50%), url(${tour.firstimage}) no-repeat center/cover`,
         }}
       >
-        <div className="text-[25px] font-bold ">오늘의 추천 SPOT✨</div>
+        <div className="text-[24px] font-bold ">오늘의 추천 SPOT✨</div>
 
         <div>
           <Tag name={heroSpot.region} />
-          <h2 className="text-[30px] lg:text-[50px] xl:text-[70px] font-bold  ">
+          <h2 className="text-[30px] lg:text-[50px] xl:text-[60px] font-bold  ">
             {tour.title}
           </h2>
-          <p className="w-[830px] text-[20px] text-white/60 ">
+          <p className="w-[830px] text-[18px] text-white/60 ">
             {tour.overview?.slice(0, 80)}...
           </p>
           <Link to={`/PlaceDetail/${tour.contentid}`}>
