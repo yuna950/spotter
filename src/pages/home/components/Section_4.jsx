@@ -1,7 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { getFestival, getLdongs } from "../../api/TourApi";
-import { useEffect, useState } from "react";
 import Tag from "../../../components/Tag";
 import { Link } from "react-router-dom";
 import {
@@ -10,24 +8,7 @@ import {
 } from "react-icons/io";
 import { Navigation } from "swiper/modules";
 
-export default function Section_4() {
-  const [festivalData, setFestivalData] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        // 축제
-        const getFestivalData = await getFestival();
-        setFestivalData(getFestivalData?.response?.body?.items?.item);
-      } catch (error) {
-        console.log(error);
-      } finally {
-      }
-    })();
-  }, []);
-
-  // console.log(festivalData);
-
+export default function Section_4({ data }) {
   return (
     <div className="py-[100px]">
       <div className="flex justify-between items-end">
@@ -52,7 +33,7 @@ export default function Section_4() {
           }}
           modules={[Navigation]}
         >
-          {festivalData.map((festival) => (
+          {data.map((festival) => (
             <SwiperSlide key={festival.contentid} className="cursor-pointer">
               <Link to={`/festivalDetail/${festival.contentid}`}>
                 <div className="aspect-[3/4] overflow-hidden bg-gray-300 rounded-xl mt-[50px] mb-[15px] relative">

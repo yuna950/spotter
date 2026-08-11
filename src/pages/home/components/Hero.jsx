@@ -1,45 +1,7 @@
-import { useEffect, useState } from "react";
 import Tag from "../../../components/Tag";
-import { getTourDetail } from "../../api/TourApi";
 import { Link } from "react-router-dom";
 
-const heroSpots = [
-  { region: "부산", contentId: "126078" },
-  { region: "제주", contentId: "590415" },
-  { region: "순천", contentId: "3076316" },
-  { region: "여수", contentId: "127547" },
-];
-
-export default function Hero() {
-  const [heroSpot] = useState(() => {
-    const randomIndex = Math.floor(Math.random() * heroSpots.length);
-
-    return heroSpots[randomIndex];
-  });
-
-  const [tour, setTour] = useState(null);
-
-  useEffect(() => {
-    const fetchHero = async () => {
-      try {
-        const data = await getTourDetail(heroSpot.contentId);
-
-        const item = data.response.body.items.item[0];
-        console.log(item);
-
-        setTour(item);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchHero();
-  }, [heroSpot.contentId]);
-
-  if (!tour) {
-    return <div>Loading...</div>;
-  }
-
+export default function Hero({ spot, tour }) {
   return (
     <div className="max-w-[1920px] w-full flex justify-center text-white">
       <div
@@ -51,7 +13,7 @@ export default function Hero() {
         <div className="text-[24px] font-bold ">오늘의 추천 SPOT✨</div>
 
         <div>
-          <Tag name={heroSpot.region} />
+          <Tag name={spot.region} />
           <h2 className="text-[30px] lg:text-[50px] xl:text-[60px] font-bold  ">
             {tour.title}
           </h2>
