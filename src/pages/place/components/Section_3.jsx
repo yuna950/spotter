@@ -53,7 +53,7 @@ export default function Section_3({ tourData, festivalData }) {
                     <p>{festival.addr1}</p>
                   </div>
 
-                  <Link to={`/festival/${festival.id}`}>
+                  <Link to={`/festival/${festival.contentid}`}>
                     <div className="px-[20px] py-[10px] inline-grid text-[12px] lg:text-[16px] text-[#BDBDBD] border border-[#BDBDBD] rounded-4xl hover:text-[#2563EB] hover:border-[#2563EB] transition mt-[50px] cursor-pointer ">
                       자세히 보기 +
                     </div>
