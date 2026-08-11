@@ -20,7 +20,7 @@ export default function Hero({ spot, tour }) {
           <p className="w-[830px] text-[18px] text-white/60 ">
             {tour.overview?.slice(0, 80)}...
           </p>
-          <Link to={`/PlaceDetail/${tour.contentid}`}>
+          <Link to={`/Place/detail/${tour.contentid}`}>
             <p className="pt-5 pb-2 border-b border-white/60 text-white/60 w-[95px] hover:vorder-white hover:text-white cursor-pointer transition  ">
               자세히 보기 +
             </p>

@@ -40,6 +40,7 @@ export default function Home() {
         // console.log(item);
 
         setTour(item);
+        console.log(tourData);
 
         // hero -----------------------------------------
 

@@ -35,7 +35,7 @@ export default function Section_4({ data }) {
         >
           {data.map((festival) => (
             <SwiperSlide key={festival.contentid} className="cursor-pointer">
-              <Link to={`/festivalDetail/${festival.contentid}`}>
+              <Link to={`/festival/${festival.contentid}`}>
                 <div className="aspect-[3/4] overflow-hidden bg-gray-300 rounded-xl mt-[50px] mb-[15px] relative">
                   <img
                     src={festival.firstimage}

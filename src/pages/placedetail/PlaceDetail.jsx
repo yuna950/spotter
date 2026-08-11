@@ -1,3 +1,51 @@
+import Section_1 from "./components/Section_1";
+import { useEffect, useState } from "react";
+import Loading from "../../components/Loading";
+import { getTourDetail } from "../api/TourApi";
+import { useParams } from "react-router-dom";
+
 export default function PlaceDetail() {
-  return <div></div>;
+  const [loading, setLoading] = useState(true);
+  const { contentid } = useParams();
+  const [tourData, setTourDetail] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const tourDetail = await getTourDetail(contentid);
+        const item = tourDetail?.response?.body?.items?.item[0];
+        setTourDetail(item);
+
+        // 관광지 상세정보 -----------------------------------
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [contentid]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <Loading />
+      </div>
+    );
+  }
+
+  console.log(tourData);
+
+  return (
+    <div className=" px-[20px] lg:px-[40px] xl:px-[250px] py-[50px]">
+      <div className="w-full xl:h-[600px] bg-gray-500 rounded-xl overflow-hidden ">
+        <img
+          src={tourData.firstimage}
+          alt={tourData.contentid}
+          className="object-bottom"
+        />
+      </div>
+
+      <Section_1 data={tourData} />
+    </div>
+  );
 }

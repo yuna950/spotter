@@ -31,20 +31,21 @@ export const getLdongs = () => {
   });
 };
 
-// 관광지 상세정보
-export const getTourDetail = (contentId) => {
+// 상세정보
+export const getTourDetail = (contentId, contentTypeId = 12) => {
   return fetchTour("detailCommon2", {
-    contentId,
+    contentId: contentId,
   });
 };
 
 // 지역기반 관광지 호출
-export const getAreaTour = (regionCode) => {
+export const getAreaTour = (regionCode, contentTypeId = 12) => {
   return fetchTour("areaBasedList2", {
-    numOfRows: 1,
+    numOfRows: 100,
     pageNo: 1,
     arrange: "C",
     contentTypeId: 12,
+    contentTypeId,
     lDongRegnCd: regionCode,
   });
 };
@@ -52,7 +53,7 @@ export const getAreaTour = (regionCode) => {
 // 행사 정보 조회
 export const getFestival = () => {
   return fetchTour("searchFestival2", {
-    numOfRows: 100,
+    numOfRows: 10000,
     pageNo: 1,
     arrange: "C",
     eventStartDate: "20260101",

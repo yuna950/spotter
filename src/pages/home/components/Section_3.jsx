@@ -19,7 +19,7 @@ export default function Section_3() {
             <p className="text-[30px] font-bold">테마 이름</p>
           </div>
 
-          <Link to={"/themeDeatil"}>
+          <Link to={"/theme"}>
             <div className="px-[20px] py-[10px] inline-grid text-[12px] lg:text-[18px] text-[#BDBDBD] border border-[#BDBDBD] rounded-4xl hover:text-[#2563EB] hover:border-[#2563EB] transition absolute bottom-12 left-12 cursor-pointer">
               자세히 보기 +
             </div>
