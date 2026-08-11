@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Hero />
 
-      <div className="px-[250px]">
+      <div className="px-[20px] lg:px-[40px] xl:px-[250px]">
         <Section_2 />
         <Section_3 />
         <Section_4 />
