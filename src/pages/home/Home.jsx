@@ -5,6 +5,7 @@ import Section_3 from "./components/Section_3";
 import Section_4 from "./components/Section_4";
 import { getAreaTour, getFestival, getTourDetail } from "../api/TourApi";
 import Loading from "../../components/Loading";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const heroSpots = [
   { region: "부산", contentId: "126078" },
@@ -21,6 +22,7 @@ const regions = [
 ];
 
 export default function Home() {
+  useScrollTop();
   const [loading, setLoading] = useState(true);
   const [areaData, setAreaData] = useState();
   const [tourData, setTour] = useState(null);

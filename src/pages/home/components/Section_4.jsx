@@ -10,6 +10,27 @@ import { Navigation } from "swiper/modules";
 import { NO_IMG } from "../../../constant/imgUrl";
 
 export default function Section_4({ data }) {
+  const getRegion = (address) => {
+    if (!address) return "";
+
+    const [first, second] = address.split(" ");
+
+    if (
+      first.endsWith("특별시") ||
+      first.endsWith("광역시") ||
+      first.endsWith("특별자치시") ||
+      first.endsWith("통합")
+    ) {
+      return first.replace(/특별시|광역시|특별자치시/g, "");
+    }
+
+    if (first.endsWith("도") || first.endsWith("특별자치도")) {
+      return second?.replace(/시$/, "") || "";
+    }
+
+    return first;
+  };
+
   return (
     <div className="py-[100px]">
       <div className="flex justify-between items-end">
@@ -51,7 +72,7 @@ export default function Section_4({ data }) {
                   )}
 
                   <div className="absolute top-3 left-3">
-                    <Tag name={festival.addr1?.split(" ")[0]} />
+                    <Tag name={getRegion(festival?.addr1)} />
                   </div>
                 </div>
 

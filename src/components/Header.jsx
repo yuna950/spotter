@@ -8,7 +8,7 @@ export default function Header() {
         <Link to={"/"}>SPOTTER</Link>
         <div className="flex gap-5 leading-[60px] lg:leading-[80px] ml-10 text-lg font-semibold">
           <div className="cursor-pointer hover:text-[#2563EB] transition">
-            <Link to={"/place"}>지역별 여행</Link>
+            <Link to={"/place"}>지역</Link>
           </div>
           <div className="cursor-pointer hover:text-[#2563EB] transition">
             <Link to={"/festival"}>전국 축제</Link>

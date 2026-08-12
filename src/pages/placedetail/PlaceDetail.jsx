@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import { getTourDetail } from "../api/TourApi";
 import { Link, useParams } from "react-router-dom";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export default function PlaceDetail() {
+  useScrollTop();
   const [loading, setLoading] = useState(true);
   const { contentid } = useParams();
   const [tourData, setTourDetail] = useState([]);

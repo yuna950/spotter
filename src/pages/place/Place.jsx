@@ -4,8 +4,10 @@ import { getAreaTour } from "../api/TourApi";
 import Section_2 from "./components/Section_2";
 import Section_3 from "./components/Section_3";
 import { useParams } from "react-router-dom";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export default function Place() {
+  useScrollTop();
   const [loading, setLoading] = useState(true);
   const { regioncode } = useParams();
   const [tourData, setTourData] = useState([]);

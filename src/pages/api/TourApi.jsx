@@ -38,13 +38,29 @@ export const getTourDetail = (contentId, contentTypeId = 12) => {
   });
 };
 
+// 이미지 정보
+export const getImage = (contentId) => {
+  return fetchTour("detailImage2", {
+    contentId,
+  });
+};
+
+// 상세 소개정보
+export const getdetail = (contentId, contentTypeId = 12) => {
+  return fetchTour("detailIntro2", {
+    contentId,
+    contentTypeId,
+    numOfRows: 100,
+    pageNo: 1,
+  });
+};
+
 // 지역기반 관광지 호출
 export const getAreaTour = (regionCode, contentTypeId = 12) => {
   return fetchTour("areaBasedList2", {
     numOfRows: 100,
     pageNo: 1,
     arrange: "C",
-    contentTypeId: 12,
     contentTypeId,
     lDongRegnCd: regionCode,
   });

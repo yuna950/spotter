@@ -8,17 +8,6 @@ export default function Section_2({ data }) {
         <h2 className="text-[25px] lg:text-[35px] xl:text-[45px] font-bold  ">
           지역별 여행
         </h2>
-
-        <form className="w-full lg:w-[400px] xl:w-[600px] pb-[10px]  border-b border-[#BDBDBD] flex items-center justify-between ">
-          <input
-            type="text"
-            placeholder="어디로 떠나고 싶으신가요?"
-            className="w-full h-full "
-          />
-          <button>
-            <SearchIcon height="1.3em" style={{ color: "#2563EB" }} />
-          </button>
-        </form>
       </div>
 
       <div className="w-[100%] flex flex-wrap gap-[10px] justify-between pt-9">
