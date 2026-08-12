@@ -5,24 +5,28 @@ export default function Section_2({ data }) {
   return (
     <div className="py-[100px]">
       <div className="flex justify-between items-end">
-        <h2 className="text-[30px] lg:text-[50px] xl:text-[60px] font-bold  ">
+        <h2 className="text-[25px] lg:text-[35px] xl:text-[45px] font-bold  ">
           지역별 여행
         </h2>
 
         <form className="w-full lg:w-[400px] xl:w-[600px] pb-[10px]  border-b border-[#BDBDBD] flex items-center justify-between ">
-          <input type="text" placeholder="어디로 떠나고 싶으신가요?" />
+          <input
+            type="text"
+            placeholder="어디로 떠나고 싶으신가요?"
+            className="w-full h-full "
+          />
           <button>
             <SearchIcon height="1.3em" style={{ color: "#2563EB" }} />
           </button>
         </form>
       </div>
 
-      <div className="w-[100%] h-[700px] flex flex-wrap gap-[30px] justify-between pt-9">
+      <div className="w-[100%] flex flex-wrap gap-[10px] justify-between pt-9">
         {data.map((region) => (
           <Link
             key={region.code}
             to={`/place/${region.code}`}
-            className="w-[48%] h-[300px]"
+            className="w-[24%] h-[300px]"
           >
             <div className="group relative w-full h-full rounded-2xl overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full">

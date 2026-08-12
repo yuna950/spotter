@@ -7,12 +7,13 @@ import {
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
 import { Navigation } from "swiper/modules";
+import { NO_IMG } from "../../../constant/imgUrl";
 
 export default function Section_4({ data }) {
   return (
     <div className="py-[100px]">
       <div className="flex justify-between items-end">
-        <h2 className="text-[30px] lg:text-[50px] xl:text-[60px] font-bold  ">
+        <h2 className="text-[25px] lg:text-[35px] xl:text-[45px] font-bold  ">
           전국 축제 / 행사🎊
         </h2>
 
@@ -36,12 +37,19 @@ export default function Section_4({ data }) {
           {data.map((festival) => (
             <SwiperSlide key={festival.contentid} className="cursor-pointer">
               <Link to={`/festival/${festival.contentid}`}>
-                <div className="aspect-[3/4] overflow-hidden bg-gray-300 rounded-xl mt-[50px] mb-[15px] relative">
-                  <img
-                    src={festival.firstimage}
-                    alt={festival.title}
-                    className="w-full h-full object-cover absolute top-0 left-0 hover:scale-105 transition"
-                  />
+                <div className="aspect-[3/4] overflow-hidden bg-[#dddddd] rounded-xl mt-[50px] mb-[15px] relative">
+                  {festival.firstimage ? (
+                    <img
+                      src={festival.firstimage}
+                      alt={festival.title}
+                      className="w-full h-full object-cover absolute top-0 left-0 hover:scale-105 transition"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <img src={NO_IMG} alt="no_img" className="w-[100%]" />
+                    </div>
+                  )}
+
                   <div className="absolute top-3 left-3">
                     <Tag name={festival.addr1?.split(" ")[0]} />
                   </div>

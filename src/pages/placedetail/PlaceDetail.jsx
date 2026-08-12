@@ -2,7 +2,7 @@ import Section_1 from "./components/Section_1";
 import { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import { getTourDetail } from "../api/TourApi";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function PlaceDetail() {
   const [loading, setLoading] = useState(true);
@@ -36,7 +36,10 @@ export default function PlaceDetail() {
   console.log(tourData);
 
   return (
-    <div className=" px-[20px] lg:px-[40px] xl:px-[250px] py-[50px]">
+    <div className=" px-[40px] lg:px-[70px] xl:px-[400px] py-[50px]">
+      <Link to={"/place"}>
+        <div>목록으로 돌아가기</div>
+      </Link>
       <div className="w-full xl:h-[600px] bg-gray-500 rounded-xl overflow-hidden ">
         <img
           src={tourData.firstimage}
