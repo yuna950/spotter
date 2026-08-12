@@ -50,14 +50,7 @@ export default function FestivalDetail() {
 
   return (
     <div>
-      <div className="px-[20px] lg:px-[40px] xl:px-[250px] xl:py-[150px]">
-        <div className=" flex items-center mb-[100px] gap-2.5">
-          <div className="w-3 h-[90px] bg-[#2563EB]"></div>
-          <h2 className="text-[20px] lg:text-[40px] xl:text-[60px] font-bold  ">
-            {festivalData?.title}
-          </h2>
-        </div>
-
+      <div className="px-[20px] lg:px-[40px] xl:px-[250px] xl:py-[100px]">
         <Section_2
           data={festivalData}
           imgData={imgData}

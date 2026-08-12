@@ -20,23 +20,27 @@ export default function Section_2({ data, imgData, detailData }) {
           )}
         </div>
 
-        <div className="">
-          <div className="mb-9">
+        <div className="flex flex-col gap-8">
+          <h2 className="text-[20px] lg:text-[40px] xl:text-[60px] font-bold  ">
+            {data?.title}
+          </h2>
+
+          <div className="">
             <p className="mb-5 text-2xl font-bold ">기간</p>
             <p>
               {detailData.eventstartdate} ~ {detailData.eventenddate}
             </p>
             {detailData.playtime}
           </div>
-          <div className="mb-9">
+          <div className="">
             <p className="mb-5 text-2xl font-bold ">장소</p>
             <p>{data?.addr1}</p>
           </div>
-          <div className="mb-9">
+          <div className="">
             <p className="mb-5 text-2xl font-bold ">입장료</p>
             <p>{detailData.usetimefestival}</p>
           </div>
-          <div className="mb-9">
+          <div className="">
             <p className="mb-5 text-2xl font-bold ">번호</p>
             <p>
               {data?.telname} | {data?.tel}
