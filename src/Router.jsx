@@ -7,6 +7,8 @@ import Place from "./pages/place/Place";
 import PlaceDetail from "./pages/placedetail/PlaceDetail";
 import FestivalDetail from "./pages/festivaldetail/FestivalDetail";
 import ThemeDetail from "./pages/themedatail/ThemeDetail";
+import Search from "./pages/search/Search";
+import Region from "./pages/region/Region";
 
 export default function Router() {
   return (
@@ -19,6 +21,8 @@ export default function Router() {
         <Route path="/Place/:regioncode" element={<Place />} />
         <Route path="/Place/detail/:contentid" element={<PlaceDetail />} />
         <Route path="/Theme" element={<ThemeDetail />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/region" element={<Region />} />
       </Routes>
 
       <Footer />

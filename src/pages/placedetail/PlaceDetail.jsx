@@ -4,6 +4,7 @@ import Loading from "../../components/Loading";
 import { getTourDetail } from "../api/TourApi";
 import { Link, useParams } from "react-router-dom";
 import { useScrollTop } from "../../lib/useScrollTop";
+import BackBtn from "../../components/BackBtn";
 
 export default function PlaceDetail() {
   useScrollTop();
@@ -40,7 +41,7 @@ export default function PlaceDetail() {
   return (
     <div className=" px-[40px] lg:px-[70px] xl:px-[400px] py-[50px]">
       <Link to={"/place"}>
-        <div>목록으로 돌아가기</div>
+        <BackBtn />
       </Link>
       <div className="w-full xl:h-[600px] bg-gray-500 rounded-xl overflow-hidden ">
         <img

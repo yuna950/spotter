@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useScrollTop } from "../../lib/useScrollTop";
 import Loading from "../../components/Loading";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getdetail, getImage, getTourDetail } from "../api/TourApi";
 import Section_2 from "./components/Section_2";
 import Section_3 from "./components/Section_3";
+import BackBtn from "../../components/BackBtn";
 
 export default function FestivalDetail() {
   useScrollTop();
@@ -50,7 +51,10 @@ export default function FestivalDetail() {
 
   return (
     <div>
-      <div className="px-[20px] lg:px-[40px] xl:px-[250px] xl:py-[100px]">
+      <div className="px-[20px] lg:px-[40px] xl:px-[250px] xl:py-[50px]">
+        <Link to={"/festival"}>
+          <BackBtn />
+        </Link>
         <Section_2
           data={festivalData}
           imgData={imgData}

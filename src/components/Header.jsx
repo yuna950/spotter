@@ -8,7 +8,7 @@ export default function Header() {
         <Link to={"/"}>SPOTTER</Link>
         <div className="flex gap-5 leading-[60px] lg:leading-[80px] ml-10 text-lg font-semibold">
           <div className="cursor-pointer hover:text-[#2563EB] transition">
-            <Link to={"/place"}>지역</Link>
+            <Link to={"/region"}>지역</Link>
           </div>
           <div className="cursor-pointer hover:text-[#2563EB] transition">
             <Link to={"/festival"}>전국 축제</Link>
@@ -17,7 +17,9 @@ export default function Header() {
       </div>
 
       <div className="h-[60px] lg:h-[80px] flex items-center">
-        <BiSearch size={25} />
+        <Link to={"/search"}>
+          <BiSearch size={25} />
+        </Link>
       </div>
     </header>
   );

@@ -25,6 +25,9 @@ export default function Section_2({ data }) {
                   alt={region.name}
                 />
               </div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
               <p className="absolute bottom-5 left-5 text-[30px] font-bold text-white">
                 {region.name}
               </p>
