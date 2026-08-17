@@ -84,7 +84,7 @@ export default function Section_2({ regioncode, signgucode }) {
     <div className="pb-[50px] w-full">
       {/* 카테고리 */}
 
-      <div className="w-full lg:w-[50%] lg:mx-auto flex justify-between lg:gap-8 mb-12">
+      <div className="w-full lg:w-[50%] flex justify-between lg:gap-8 mb-12">
         {categories.map((category) => (
           <RegionMenu
             key={category.contentTypeId}
