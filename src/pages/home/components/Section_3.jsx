@@ -87,8 +87,8 @@ export default function Section_3({ course }) {
         <div className="h-[30vh] lg:h-full w-full lg:w-[48%] bg-gray-300 rounded-2xl  overflow-hidden relative mb-5 lg:mb-0">
           <div className=" h-full">
             <img
-              src={placeData[1].detail?.firstimage}
-              alt={placeData[1].detail?.title}
+              src={placeData[1]?.detail?.firstimage}
+              alt={placeData[1]?.detail?.title}
               className="object-cover h-full"
             />
 
