@@ -44,6 +44,12 @@ export default function Section_2({ regioncode, signgucode }) {
     setCurrentPage(1);
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentPage]);
   // 카테고리별 데이터 가져오기
   useEffect(() => {
     if (!regioncode) return;
