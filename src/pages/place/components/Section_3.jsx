@@ -13,15 +13,18 @@ export default function Section_3({ tourData, festivalData }) {
 
     return `${date.slice(0, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
   };
+
+  console.log(festivalData);
   return (
-    <div className="py-[50px]">
+    <div className="py-[50px] w-full ">
       <h2 className="text-[30px] lg:text-[50px] font-bold mb-9 ">
         행사 / 축제
       </h2>
 
-      <div className="relative">
+      <div className="relative w-full">
         <Swiper
           slidesPerView={1}
+          spaceBetween={10}
           centeredSlides={true}
           navigation={{
             prevEl: ".festival-prev",
@@ -31,16 +34,16 @@ export default function Section_3({ tourData, festivalData }) {
         >
           {festivalData.map((festival) => (
             <SwiperSlide key={festival.contentid} className="">
-              <div className="xl:w-[1000px] border border-gray-800 rounded-2xl p-[50px] flex gap-[100px] m-auto">
-                <div className=" w-[40%] bg-gray-300 rounded-2xl overflow-hidden">
+              <div className="w-[80%] xl:w-[1000px] m-auto border border-gray-800 rounded-2xl p-[30px] lg:p-[50px] flex flex-col lg:flex-row gap-[30px] lg:gap-[100px] m-auto">
+                <div className="w-full lg:w-[40%] bg-gray-300 rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src={festival.firstimage}
                     alt={festival.contentid}
                     className="h-full object-cover"
                   />
                 </div>
-                <div>
-                  <div className="mb-[80px]">
+                <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start">
+                  <div className="mb-8 lg:mb-[80px] text-center lg:text-start">
                     <p className="text-[#2563EB]">
                       {festival.addr1?.split(" ")[0]}
                     </p>
@@ -49,16 +52,18 @@ export default function Section_3({ tourData, festivalData }) {
                     </p>
                   </div>
 
-                  <div className="mb-5">
+                  <div className="mb-5 text-center lg:text-start">
                     <p className="text-xl font-bold mb-2.5">기간</p>
                     <p>
-                      {formatDate(festival.detail?.eventstartdate)}
+                      {festival.detail?.eventstartdate}
                       {" ~ "}
-                      {formatDate(festival.detail?.eventenddate)}
+                      {festival.detail?.eventenddate}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xl font-bold mb-2.5">장소</p>
+                    <p className="text-xl font-bold mb-2.5 text-center lg:text-start">
+                      장소
+                    </p>
                     <p>{festival.addr1}</p>
                   </div>
 
@@ -73,7 +78,7 @@ export default function Section_3({ tourData, festivalData }) {
           ))}
         </Swiper>
         {/* 왼쪽 버튼 */}
-        <button className="festival-prev absolute left-[-30px] top-[45%] z-10">
+        <button className="festival-prev absolute left-[-20px] top-[45%] z-10">
           <IoIosArrowDropleftCircle
             color="white"
             size={80}
@@ -82,7 +87,7 @@ export default function Section_3({ tourData, festivalData }) {
         </button>
 
         {/* 오른쪽 버튼 */}
-        <button className="festival-next absolute right-[-30px] top-[45%] z-10">
+        <button className="festival-next absolute right-[-20px] top-[45%] z-10">
           <IoIosArrowDroprightCircle
             color="white"
             size={80}

@@ -66,7 +66,7 @@ export default function Section_4({ data }) {
           {data.map((festival) => (
             <SwiperSlide key={festival.contentid} className="cursor-pointer">
               <Link to={`/festival/${festival.contentid}`}>
-                <div className="aspect-[3/4] overflow-hidden bg-[#dddddd] rounded-xl mt-[50px] mb-[15px] relative">
+                <div className="w-[80%] m-auto aspect-[3/4] overflow-hidden bg-[#dddddd] rounded-xl mt-[50px] mb-[15px] relative">
                   {festival.firstimage ? (
                     <img
                       src={festival.firstimage}
@@ -90,7 +90,7 @@ export default function Section_4({ data }) {
           ))}
         </Swiper>
         {/* 왼쪽 버튼 */}
-        <button className="festival-prev absolute left-[-30px] top-[45%] z-10">
+        <button className="festival-prev absolute left-[-20px] top-[45%] z-10">
           <IoIosArrowDropleftCircle
             color="white"
             size={50}
@@ -99,7 +99,7 @@ export default function Section_4({ data }) {
         </button>
 
         {/* 오른쪽 버튼 */}
-        <button className="festival-next absolute right-[-30px] top-[45%] z-10">
+        <button className="festival-next absolute right-[-20px] top-[45%] z-10">
           <IoIosArrowDroprightCircle
             color="white"
             size={50}

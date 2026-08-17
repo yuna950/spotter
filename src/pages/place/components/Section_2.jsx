@@ -81,11 +81,11 @@ export default function Section_2({ regioncode, signgucode }) {
   const currentData = tourData.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="py-[50px]">
+    <div className="py-[50px] w-full">
       {/* 카테고리 + 검색 */}
-      <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-8 mb-12">
+      <div className=" flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
         {/* 카테고리 */}
-        <div className="flex gap-8">
+        <div className="flex justify-between lg:gap-8">
           {categories.map((category) => (
             <RegionMenu
               key={category.contentTypeId}

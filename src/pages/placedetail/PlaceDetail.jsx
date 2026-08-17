@@ -12,7 +12,6 @@ import {
 import Loading from "../../components/Loading";
 import BackBtn from "../../components/BackBtn";
 import { useScrollTop } from "../../lib/useScrollTop";
-import Section_3 from "./components/Section_3";
 
 export default function PlaceDetail() {
   useScrollTop();
@@ -122,7 +121,6 @@ export default function PlaceDetail() {
 
       <Section_1 data={tourData} detail={detailData} />
       <Section_2 tour={areaTourData} festival={festivalData} />
-      <Section_3 data={relatedData} />
     </div>
   );
 }

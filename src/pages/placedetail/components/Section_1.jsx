@@ -45,13 +45,15 @@ export default function Section_1({ data, detail }) {
         <p className="text-[#2563EB] text-lg font-bold">
           {getRegionName(data?.addr1)}
         </p>
-        <p className="text-6xl font-bold mt-2.5 mb-9">{data.title}</p>
-        <p className="text-lg text-[#111827]/70">{data.overview}</p>
+        <p className="text-[25px] lg:text-[35px] xl:text-[45px] font-bold mt-2.5 mb-9">
+          {data.title}
+        </p>
+        <p className="text-sm lg:text-lg text-[#111827]/70">{data.overview}</p>
       </div>
 
-      <div className="flex justify-evenly mt-[50px] text-center">
+      <div className="flex justify-between mt-[50px] text-center">
         {detail?.usetime && (
-          <div>
+          <div className="w-[33%]">
             <p className="text-xl font-bold mb-3">영업시간</p>
             <div> {formatUsetime(detail.usetime)}</div>
             {detail?.restdate && (
@@ -63,13 +65,13 @@ export default function Section_1({ data, detail }) {
         )}
 
         {detail?.infocenter && (
-          <div>
+          <div className="w-[33%]">
             <p className="text-xl font-bold mb-3">번호</p>
             <p>{detail?.infocenter}</p>
           </div>
         )}
 
-        <div>
+        <div className="w-[33%]">
           <p className="text-xl font-bold mb-3">주소</p>
           <p>{data.addr1}</p>
         </div>

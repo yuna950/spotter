@@ -8,9 +8,14 @@ import {
 } from "react-icons/io";
 
 export default function Section_2({ tour, festival }) {
+  const formatDate = (date) => {
+    if (!date) return "";
+
+    return `${date.slice(0, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
+  };
   return (
     <div className="py-[50px] mt-[50px]">
-      <h2 className="text-[30px] lg:text-[50px] font-bold mb-9 ">
+      <h2 className="text-[25px] lg:text-[35px] xl:text-[45px]  font-bold mb-9 ">
         행사 / 축제
       </h2>
 
@@ -26,20 +31,22 @@ export default function Section_2({ tour, festival }) {
         >
           {festival.map((data) => (
             <SwiperSlide key={data.contentid}>
-              <div className="xl:w-[800px] border border-gray-800 rounded-2xl p-[50px] flex gap-[100px] m-auto">
-                <div className=" aspect-[3/4] w-[40%]  bg-gray-300 rounded-2xl overflow-hidden">
+              <div className="xl:w-[800px] border border-gray-800 rounded-2xl p-[50px] flex flex-col lg:flex-row gap-[30px] lg:gap-[100px] m-auto">
+                <div className=" aspect-[3/4] w-full lg:w-[40%]  bg-gray-300 rounded-2xl overflow-hidden">
                   <img
                     src={data.firstimage}
                     alt={data.contentid}
                     className="h-full object-cover"
                   />
                 </div>
-                <div>
-                  <div className="mb-[50px]">
+                <div className="text-center lg:text-start">
+                  <div className=" mb-[50px]">
                     <p className="text-[#2563EB]">
                       {data.addr1?.split(" ")[0]}
                     </p>
-                    <p className="text-2xl font-bold mt-2.5">{data.title}</p>
+                    <p className="text-[23px] lg:text-[33px] xl:text-[43px]  font-bold mt-2.5">
+                      {data.title}
+                    </p>
                   </div>
 
                   <div className="mb-5">

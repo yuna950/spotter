@@ -130,7 +130,7 @@ export default function Place() {
 
   return (
     <div>
-      <div className="w-full h-[20vh]  px-[20px] lg:px-[40px] xl:px-[250px] flex flex-col justify-center items-start">
+      <div className="w-full py-[30px] px-[20px] lg:px-[40px] xl:px-[250px] flex flex-col justify-center items-start">
         <h2 className="text-[30px] lg:text-[50px] xl:text-[60px] font-bold mb-3 ">
           {regionName}
         </h2>
