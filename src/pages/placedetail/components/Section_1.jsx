@@ -58,7 +58,7 @@ export default function Section_1({ data, detail }) {
             <div> {formatUsetime(detail.usetime)}</div>
             {detail?.restdate && (
               <p className="text-[#EB2528]/70 text-sm mt-1">
-                {detail.restdate}
+                {detail?.restdate}
               </p>
             )}
           </div>

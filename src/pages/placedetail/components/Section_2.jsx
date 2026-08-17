@@ -52,9 +52,9 @@ export default function Section_2({ tour, festival }) {
                   <div className="mb-5">
                     <p className="text-xl font-bold mb-2.5">기간</p>
                     <p>
-                      {formatDate(data.detail?.eventstartdate)}
+                      {formatDate(data?.detail?.eventstartdate)}
                       {" ~ "}
-                      {formatDate(data.detail?.eventenddate)}
+                      {formatDate(data?.detail?.eventenddate)}
                     </p>
                   </div>
                   <div>
