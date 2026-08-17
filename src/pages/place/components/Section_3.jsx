@@ -14,7 +14,9 @@ export default function Section_3({ tourData, festivalData }) {
     return `${date.slice(0, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
   };
 
-  console.log(festivalData);
+  console.log("festivalData:", festivalData);
+  console.log("첫 번째 축제:", festivalData?.[0]);
+  console.log("첫 번째 축제 detail:", festivalData?.[0]?.detail);
   return (
     <div className="py-[50px] w-full ">
       <h2 className="text-[30px] lg:text-[50px] font-bold mb-9 ">
@@ -34,7 +36,7 @@ export default function Section_3({ tourData, festivalData }) {
         >
           {festivalData?.map((festival) => (
             <SwiperSlide key={festival.contentid} className="">
-              <div className="w-[80%] xl:w-[1000px] m-auto border border-gray-800 rounded-2xl p-[30px] lg:p-[50px] flex flex-col lg:flex-row gap-[30px] lg:gap-[100px] m-auto">
+              <div className="w-[70%] xl:w-[1000px] m-auto border border-gray-800 rounded-2xl p-[30px] lg:p-[50px] flex flex-col lg:flex-row gap-[30px] lg:gap-[100px] m-auto">
                 <div className="w-full lg:w-[40%] bg-gray-300 rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src={festival.firstimage}
@@ -55,9 +57,9 @@ export default function Section_3({ tourData, festivalData }) {
                   <div className="mb-5 text-center lg:text-start">
                     <p className="text-xl font-bold mb-2.5">기간</p>
                     <p>
-                      {festival?.detail?.eventstartdate}
+                      {formatDate(festival?.detail?.eventstartdate)}
                       {" ~ "}
-                      {festival?.detail?.eventenddate}
+                      {formatDate(festival?.detail?.eventenddate)}
                     </p>
                   </div>
                   <div>

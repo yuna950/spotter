@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export default function Hero({ spot, tour }) {
   return (
     <div className="max-w-[1920px] w-full flex justify-center text-white">
-      <div className="w-[95%] xl:w-[1770px] h-[40vh] lg:h-[50vh] xl:h-[70vh] bg-gray-400 rounded-2xl flex flex-col px-[200px] py-[80px] justify-between relative overflow-hidden">
-        <div className="absolute top-0 xl:bottom-[-30%] left-0 h-full w-full blur-[1.5px]">
+      <div className="w-[90%] xl:w-[1770px] h-[50vh] xl:h-[70vh] bg-gray-400 rounded-2xl flex flex-col px-[200px] py-[80px] justify-between relative overflow-hidden">
+        <div className="absolute top-0 xl:bottom-[-30%] left-0 h-full w-full blur-[1.5px] rounded-2xl overflow-hidden">
           <img
             src={tour.firstimage}
             alt={tour.title}

@@ -58,19 +58,20 @@ export default function Place() {
         // 축제
         const festivalResponse = await getAreaTour(regioncode, 15, signgucode);
 
-        const festivals = festivalResponse?.response?.body?.items?.item || [];
+        const festivals = festivalResponse?.response?.body?.items?.item;
 
         // 축제마다 상세 소개정보 가져오기
         const festivalsWithDetail = await Promise.all(
-          festivals.map(async (festival) => {
+          festivals.slice(0, 5).map(async (festival) => {
             try {
               const detailResponse = await getdetail(festival.contentid, 15);
 
-              const detail = detailResponse?.response?.body?.items?.item?.[0];
+              const detail =
+                detailResponse?.response?.body?.items?.item?.[0] || {};
 
               return {
                 ...festival,
-                detail: detail || {},
+                detail,
               };
             } catch (error) {
               console.log(`${festival.title} 상세정보 가져오기 실패:`, error);

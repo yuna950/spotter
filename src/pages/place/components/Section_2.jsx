@@ -81,33 +81,18 @@ export default function Section_2({ regioncode, signgucode }) {
   const currentData = tourData.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="py-[50px] w-full">
-      {/* 카테고리 + 검색 */}
-      <div className=" flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
-        {/* 카테고리 */}
-        <div className="flex justify-between lg:gap-8">
-          {categories.map((category) => (
-            <RegionMenu
-              key={category.contentTypeId}
-              name={category.name}
-              active={selectedCategory === category.contentTypeId}
-              onClick={() => handleCategory(category.contentTypeId)}
-            />
-          ))}
-        </div>
+    <div className="pb-[50px] w-full">
+      {/* 카테고리 */}
 
-        {/* 검색 */}
-        <form className="w-full lg:w-[400px] xl:w-[600px] pb-[10px] border-b border-[#BDBDBD] flex items-center justify-between">
-          <input
-            type="text"
-            placeholder="관광지를 검색해주세요"
-            className="w-full outline-none"
+      <div className="w-full lg:w-[50%] lg:mx-auto flex justify-between lg:gap-8 mb-12">
+        {categories.map((category) => (
+          <RegionMenu
+            key={category.contentTypeId}
+            name={category.name}
+            active={selectedCategory === category.contentTypeId}
+            onClick={() => handleCategory(category.contentTypeId)}
           />
-
-          <button type="submit">
-            <BiSearch size={25} className="text-[#2563EB]" />
-          </button>
-        </form>
+        ))}
       </div>
 
       {/* 관광지 */}
@@ -153,7 +138,7 @@ export default function Section_2({ regioncode, signgucode }) {
 
       {/* 페이지네이션 */}
       {totalPages > 1 && (
-        <div className="flex justify-center gap-3 mt-[60px]">
+        <div className="flex justify-center gap-3 mt-[60px] flex-wrap">
           {Array.from({ length: totalPages }, (_, index) => index + 1).map(
             (page) => (
               <button

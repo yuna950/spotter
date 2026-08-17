@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { getLdongs } from "../api/TourApi";
 import { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export default function Region() {
+  useScrollTop();
   const [loading, setLoading] = useState(true);
   const [regionData, setRegionData] = useState();
   const [selectedRegion, setSelectedRegion] = useState(null);

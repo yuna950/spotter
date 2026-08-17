@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import Tag from "../../components/Tag";
 import Loading from "../../components/Loading";
 import { NO_IMG } from "../../constant/imgUrl";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export default function Festival() {
+  useScrollTop();
   const [festivalData, setFestivalData] = useState([]);
   const [loading, setLoading] = useState(true);
 

@@ -1,11 +1,11 @@
 import { NO_IMG } from "../../../constant/imgUrl";
 
 export default function Section_2({ data, imgData, detailData }) {
-  const poster = imgData?.find((img) => img.imgname?.includes("포스터"));
+  const poster = imgData?.find((img) => img?.imgname?.includes("포스터"));
 
   return (
     <div>
-      <div className="flex gap-[100px] items-center mb-[50px]">
+      <div className="flex flex-col lg:flex-row gap-[50px] lg:gap-25 items-center mb-[50px]">
         <div className="w-[400px] h-[550px] bg-[#dddddd] rounded-xl overflow-hidden shadow-2xl">
           {poster ? (
             <img
@@ -21,30 +21,45 @@ export default function Section_2({ data, imgData, detailData }) {
         </div>
 
         <div className="flex flex-col gap-8">
-          <h2 className="text-[20px] lg:text-[40px] xl:text-[60px] font-bold  ">
+          <h2 className="text-[20px] lg:text-[40px] xl:text-[60px] text-center font-bold  ">
             {data?.title}
           </h2>
 
-          <div className="">
-            <p className="mb-5 text-2xl font-bold ">기간</p>
-            <p>
-              {detailData.eventstartdate} ~ {detailData.eventenddate}
-            </p>
-            {detailData.playtime}
-          </div>
-          <div className="">
-            <p className="mb-5 text-2xl font-bold ">장소</p>
-            <p>{data?.addr1}</p>
-          </div>
-          <div className="">
-            <p className="mb-5 text-2xl font-bold ">입장료</p>
-            <p>{detailData.usetimefestival}</p>
-          </div>
-          <div className="">
-            <p className="mb-5 text-2xl font-bold ">번호</p>
-            <p>
-              {data?.telname} | {data?.tel}
-            </p>
+          <div className="flex flex-wrap gap-5 lg:flex-nowrap lg:flex-col ">
+            <div className="w-[45%] text-center  lg:text-start">
+              <p className="mb-5 text-lg lg:text-xl xl:text-2xl font-bold ">
+                기간
+              </p>
+              <p className="text-sm lg:text-md xl:text-lg">
+                {detailData?.eventstartdate} ~ {detailData?.eventenddate}
+              </p>
+              {detailData.playtime}
+            </div>
+
+            <div className="w-[45%] text-center lg:text-start">
+              <p className="mb-5 text-lg lg:text-xl xl:text-2xl font-bold ">
+                장소
+              </p>
+              <p className="text-sm lg:text-md xl:text-lg">{data?.addr1}</p>
+            </div>
+
+            <div className="w-[45%] text-center lg:text-start">
+              <p className="mb-5 text-lg lg:text-xl xl:text-2xl font-bold ">
+                입장료
+              </p>
+              <p className="text-sm lg:text-md xl:text-lg">
+                {detailData.usetimefestival}
+              </p>
+            </div>
+
+            <div className="w-[45%] text-center lg:text-start">
+              <p className="mb-5 text-lg lg:text-xl xl:text-2xl font-bold ">
+                번호
+              </p>
+              <p className="text-sm lg:text-md xl:text-lg">
+                {data?.telname} | {data?.tel}
+              </p>
+            </div>
           </div>
         </div>
       </div>

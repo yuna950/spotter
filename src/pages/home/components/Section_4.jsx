@@ -48,7 +48,7 @@ export default function Section_4({ data }) {
       <div className="relative">
         <Swiper
           spaceBetween={10}
-          slidesPerView={2}
+          slidesPerView={1}
           navigation={{
             prevEl: ".festival-prev",
             nextEl: ".festival-next",
@@ -84,7 +84,9 @@ export default function Section_4({ data }) {
                   </div>
                 </div>
 
-                <p className="text-xl font-semibold mt-1 ">{festival.title}</p>
+                <p className="text-xl font-semibold mt-1 text-center">
+                  {festival.title}
+                </p>
               </Link>
             </SwiperSlide>
           ))}

@@ -48,18 +48,16 @@ export default function FestivalDetail() {
   }
 
   return (
-    <div>
-      <div className="px-[20px] lg:px-[40px] xl:px-[250px] xl:py-[50px]">
-        <Link to={"/festival"}>
-          <BackBtn />
-        </Link>
-        <Section_2
-          data={festivalData}
-          imgData={imgData}
-          detailData={detailData}
-        />
-        <Section_3 data={imgData} />
-      </div>
+    <div className="px-[20px] lg:px-[40px] xl:px-[250px] py-[50px]">
+      <Link to={"/festival"}>
+        <BackBtn />
+      </Link>
+      <Section_2
+        data={festivalData}
+        imgData={imgData}
+        detailData={detailData}
+      />
+      <Section_3 data={imgData} />
     </div>
   );
 }

@@ -83,21 +83,23 @@ export default function Section_3({ course }) {
         코스 여행
       </h2>
 
-      <div className="h-[550px]  w-full mt-10 flex flex-col lg:flex-row justify-between items-end">
-        <div className="h-[30vh] lg:h-full w-full lg:w-[48%] bg-gray-300 rounded-2xl  overflow-hidden relative mb-5 lg:mb-0">
-          <div className=" h-full">
-            <img
-              src={placeData?.[1]?.detail?.firstimage}
-              alt={placeData?.[1]?.detail?.title}
-              className="object-cover h-full"
-            />
+      <div className="lg:h-[550px] w-full mt-10 flex flex-col lg:flex-row justify-between items-end">
+        <div className="lg:h-full w-full lg:w-[48%] bg-gray-300 rounded-2xl  overflow-hidden relative mb-5 lg:mb-0">
+          <div className=" h-[30vh] lg:h-full">
+            {placeData.length > 1 && (
+              <img
+                src={placeData[1]?.detail?.firstimage}
+                alt={placeData[1]?.detail?.title}
+                className="object-cover h-full"
+              />
+            )}
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
           </div>
 
           <div className="absolute top-12 left-12">
-            <Tag name={course.sigun} />
-            <p className="text-[35px] font-bold">{course.crsKorNm}</p>
+            <Tag name={course?.sigun} />
+            <p className="text-[35px] font-bold">{course?.crsKorNm}</p>
           </div>
 
           <Link to={"/theme"}>

@@ -78,7 +78,7 @@ export default function Section_2({ course }) {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-3 gap-[3%]">
+        <div className="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-[3%]">
           {placeData?.map((place) => (
             <div key={place.contentid} className="">
               <div className="aspect-[2/1] rounded-2xl overflow-hidden">
@@ -93,13 +93,16 @@ export default function Section_2({ course }) {
             </div>
           ))}
         </div>
-        <p className="text-lg text-center whitespace-pre-line m-auto w-[1200px] py-[100px]">
+        <p className="text-lg text-center whitespace-pre-line m-auto w-[300px] lg:w-[800px] xl:w-[1200px] py-[100px]">
           {course?.crsContents?.replace(/<br\s*\/?>/gi, "\n")}
         </p>
       </div>
 
       {placeData?.map((place) => (
-        <div key={place.contentid} className="px-[100px] py-[50px]">
+        <div
+          key={place.contentid}
+          className="px-[20px] lg:px-[40px] xl:px-[100px] py-[50px]"
+        >
           <div className="flex gap-3 pb-[50px]">
             <div className="w-2 h-10 bg-[#2563EB]"></div>
             <h2 className="text-3xl font-bold">{place?.detail?.title}</h2>
@@ -113,16 +116,16 @@ export default function Section_2({ course }) {
               {place?.detail?.overview}
             </p>
 
-            <div className="w-full flex justify-between gap-[3%] border border-[#2563EB] rounded-2xl p-5">
-              <div className="w-[33%] text-center">
+            <div className="w-full flex flex-col lg:flex-row justify-between gap-5 lg:gap-[3%] border border-[#2563EB] rounded-2xl p-5">
+              <div className="w-full lg:w-[33%] text-center">
                 <p className="font-bold text-lg mb-3">주소</p>
                 <p>{place?.detail?.addr1}</p>
               </div>
-              <div className="w-[33%] text-center">
+              <div className="w-full lg:w-[33%] text-center">
                 <p className="font-bold text-lg  mb-3">이용시간</p>
                 <p>{formatUsetime(place?.intro?.usetime)}</p>
               </div>
-              <div className="w-[33%] text-center">
+              <div className="w-full lg:w-[33%] text-center">
                 <p className="font-bold text-lg  mb-3">번호</p>
                 <p>{place?.intro?.infocenter}</p>
               </div>
