@@ -112,13 +112,13 @@ export default function Section_3({ course }) {
             <div key={place.contentid} className="">
               <div className="aspect-[1/1.3] rounded-2xl overflow-hidden">
                 <img
-                  src={place.detail?.firstimage}
-                  alt={place.detail?.title}
+                  src={place?.detail?.firstimage}
+                  alt={place?.detail?.title}
                   className="object-cover h-full"
                 />
               </div>
               <p className="text-center font-bold mt-3">
-                {place.detail?.title}
+                {place?.detail?.title}
               </p>
             </div>
           ))}
