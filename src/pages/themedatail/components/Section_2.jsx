@@ -94,7 +94,7 @@ export default function Section_2({ course }) {
           ))}
         </div>
         <p className="text-lg text-center whitespace-pre-line m-auto w-[1200px] py-[100px]">
-          {course.crsContents?.replace(/<br\s*\/?>/gi, "\n")}
+          {course?.crsContents?.replace(/<br\s*\/?>/gi, "\n")}
         </p>
       </div>
 
