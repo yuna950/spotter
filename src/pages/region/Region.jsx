@@ -45,8 +45,6 @@ export default function Region() {
     ? regionData.filter((region) => region.lDongRegnCd === selectedRegion.code)
     : [];
 
-  console.log(regionData);
-
   return (
     <div className="min-h-screen px-[20px] lg:px-[40px] xl:px-[250px] py-[50px]">
       <div className="flex justify-between items-end">
@@ -112,7 +110,7 @@ export default function Region() {
             {cities.map((city) => (
               <Link
                 key={`${city.lDongRegnCd}-${city.lDongSignguCd}`}
-                to={`/place/${city.lDongRegnCd}`}
+                to={`/place/${city.lDongRegnCd}/${city.lDongSignguCd}`}
                 className="
                   h-[80px]
                   rounded-xl

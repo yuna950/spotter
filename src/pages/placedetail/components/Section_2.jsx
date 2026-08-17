@@ -1,20 +1,15 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
-import { Navigation } from "swiper/modules";
 
-export default function Section_3({ tourData, festivalData }) {
-  const formatDate = (date) => {
-    if (!date) return "";
-
-    return `${date.slice(0, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
-  };
+export default function Section_2({ tour, festival }) {
   return (
-    <div className="py-[50px]">
+    <div className="py-[50px] mt-[50px]">
       <h2 className="text-[30px] lg:text-[50px] font-bold mb-9 ">
         행사 / 축제
       </h2>
@@ -29,40 +24,38 @@ export default function Section_3({ tourData, festivalData }) {
           }}
           modules={[Navigation]}
         >
-          {festivalData.map((festival) => (
-            <SwiperSlide key={festival.contentid} className="">
-              <div className="xl:w-[1000px] border border-gray-800 rounded-2xl p-[50px] flex gap-[100px] m-auto">
-                <div className=" w-[40%] bg-gray-300 rounded-2xl overflow-hidden">
+          {festival.map((data) => (
+            <SwiperSlide key={data.contentid}>
+              <div className="xl:w-[800px] border border-gray-800 rounded-2xl p-[50px] flex gap-[100px] m-auto">
+                <div className=" aspect-[3/4] w-[40%]  bg-gray-300 rounded-2xl overflow-hidden">
                   <img
-                    src={festival.firstimage}
-                    alt={festival.contentid}
+                    src={data.firstimage}
+                    alt={data.contentid}
                     className="h-full object-cover"
                   />
                 </div>
                 <div>
-                  <div className="mb-[80px]">
+                  <div className="mb-[50px]">
                     <p className="text-[#2563EB]">
-                      {festival.addr1?.split(" ")[0]}
+                      {data.addr1?.split(" ")[0]}
                     </p>
-                    <p className="text-2xl font-bold mt-2.5">
-                      {festival.title}
-                    </p>
+                    <p className="text-2xl font-bold mt-2.5">{data.title}</p>
                   </div>
 
                   <div className="mb-5">
                     <p className="text-xl font-bold mb-2.5">기간</p>
                     <p>
-                      {formatDate(festival.detail?.eventstartdate)}
+                      {formatDate(data.detail?.eventstartdate)}
                       {" ~ "}
-                      {formatDate(festival.detail?.eventenddate)}
+                      {formatDate(data.detail?.eventenddate)}
                     </p>
                   </div>
                   <div>
                     <p className="text-xl font-bold mb-2.5">장소</p>
-                    <p>{festival.addr1}</p>
+                    <p>{data.detail?.eventplace}</p>
                   </div>
 
-                  <Link to={`/festival/${festival.contentid}`}>
+                  <Link to={`/festival/${data.contentid}`}>
                     <div className="px-[20px] py-[10px] inline-grid text-[12px] lg:text-[16px] text-[#BDBDBD] border border-[#BDBDBD] rounded-4xl hover:text-[#2563EB] hover:border-[#2563EB] transition mt-[50px] cursor-pointer ">
                       자세히 보기 +
                     </div>

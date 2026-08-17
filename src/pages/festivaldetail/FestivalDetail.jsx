@@ -47,8 +47,6 @@ export default function FestivalDetail() {
     );
   }
 
-  console.log(detailData);
-
   return (
     <div>
       <div className="px-[20px] lg:px-[40px] xl:px-[250px] xl:py-[50px]">

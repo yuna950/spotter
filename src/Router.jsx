@@ -19,6 +19,7 @@ export default function Router() {
         <Route path="/festival" element={<Festival />} />
         <Route path="/Festival/:contentid" element={<FestivalDetail />} />
         <Route path="/Place/:regioncode" element={<Place />} />
+        <Route path="/place/:regioncode/:signgucode" element={<Place />} />
         <Route path="/Place/detail/:contentid" element={<PlaceDetail />} />
         <Route path="/Theme" element={<ThemeDetail />} />
         <Route path="/search" element={<Search />} />

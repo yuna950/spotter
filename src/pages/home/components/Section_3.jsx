@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import Tag from "../../../components/Tag";
 
-export default function Section_3() {
+export default function Section_3({ course }) {
   return (
     <div className="py-[100px]">
       <h2 className="text-[25px] lg:text-[35px] xl:text-[45px] font-bold  ">
-        테마 여행
+        코스 여행
       </h2>
 
       <div className="h-[550px]  w-full mt-10  flex justify-between items-end">
@@ -15,8 +15,8 @@ export default function Section_3() {
           </div>
 
           <div className="absolute top-12 left-12">
-            <Tag name={"서울"} />
-            <p className="text-[30px] font-bold">테마 이름</p>
+            <Tag name={course.sigun} />
+            <p className="text-[35px] font-bold">{course.crsKorNm}</p>
           </div>
 
           <Link to={"/theme"}>

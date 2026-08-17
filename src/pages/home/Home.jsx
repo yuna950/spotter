@@ -3,7 +3,12 @@ import Hero from "./components/Hero";
 import Section_2 from "./components/Section_2";
 import Section_3 from "./components/Section_3";
 import Section_4 from "./components/Section_4";
-import { getAreaTour, getFestival, getTourDetail } from "../api/TourApi";
+import {
+  getAreaTour,
+  getCourse,
+  getFestival,
+  getTourDetail,
+} from "../api/TourApi";
 import Loading from "../../components/Loading";
 import { useScrollTop } from "../../lib/useScrollTop";
 
@@ -27,6 +32,7 @@ export default function Home() {
   const [areaData, setAreaData] = useState();
   const [tourData, setTour] = useState(null);
   const [festivalData, setFestivalData] = useState([]);
+  const [courseData, setCourseData] = useState();
   const [heroSpot] = useState(() => {
     const randomIndex = Math.floor(Math.random() * heroSpots.length);
 
@@ -39,10 +45,8 @@ export default function Home() {
         const tourData = await getTourDetail(heroSpot.contentId);
 
         const item = tourData.response.body.items.item[0];
-        // console.log(item);
 
         setTour(item);
-        console.log(tourData);
 
         // hero -----------------------------------------
 
@@ -66,6 +70,9 @@ export default function Home() {
         setFestivalData(getFestivalData?.response?.body?.items?.item);
 
         // 축제 ------------------------------------------
+
+        const course = await getCourse("부산", 2, "DNWW");
+        setCourseData(course?.response?.body?.items?.item);
       } catch (error) {
         console.log(error);
       } finally {
@@ -88,7 +95,7 @@ export default function Home() {
 
       <div className="px-[20px] lg:px-[40px] xl:px-[250px]">
         <Section_2 data={areaData} />
-        <Section_3 />
+        <Section_3 course={courseData[0]} />
         <Section_4 data={festivalData} />
       </div>
     </div>

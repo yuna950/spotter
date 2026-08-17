@@ -8,6 +8,12 @@ export default function Section_2({ data }) {
         <h2 className="text-[25px] lg:text-[35px] xl:text-[45px] font-bold  ">
           지역별 여행
         </h2>
+
+        <Link to={"/region"}>
+          <div className="px-[20px] py-[10px] inline-grid text-[12px] lg:text-[18px] text-[#BDBDBD] border border-[#BDBDBD] rounded-4xl hover:text-[#2563EB] hover:border-[#2563EB] transition">
+            더보기 +
+          </div>
+        </Link>
       </div>
 
       <div className="w-[100%] flex flex-wrap gap-[10px] justify-between pt-9">
