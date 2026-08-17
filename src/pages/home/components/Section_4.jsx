@@ -48,12 +48,20 @@ export default function Section_4({ data }) {
       <div className="relative">
         <Swiper
           spaceBetween={10}
-          slidesPerView={4}
+          slidesPerView={2}
           navigation={{
             prevEl: ".festival-prev",
             nextEl: ".festival-next",
           }}
           modules={[Navigation]}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
         >
           {data.map((festival) => (
             <SwiperSlide key={festival.contentid} className="cursor-pointer">

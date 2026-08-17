@@ -16,12 +16,12 @@ export default function Section_2({ data }) {
         </Link>
       </div>
 
-      <div className="w-[100%] flex flex-wrap gap-[10px] justify-between pt-9">
+      <div className="w-[100%] grid grid-cols-2 lg:grid-cols-4 gap-[10px] pt-9">
         {data.map((region) => (
           <Link
             key={region.code}
             to={`/place/${region.code}`}
-            className="w-[24%] h-[300px]"
+            className="w-full h-[300px]"
           >
             <div className="group relative w-full h-full rounded-2xl overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full">
