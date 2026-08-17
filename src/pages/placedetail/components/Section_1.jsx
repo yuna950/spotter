@@ -51,13 +51,16 @@ export default function Section_1({ data, detail }) {
         <p className="text-sm lg:text-lg text-[#111827]/70">{data.overview}</p>
       </div>
 
-      <div className="flex justify-between mt-[50px] text-center">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 lg:justify-between mt-[50px] text-center">
         {detail?.usetime && (
-          <div className="w-[33%]">
-            <p className="text-xl font-bold mb-3">영업시간</p>
-            <div> {formatUsetime(detail.usetime)}</div>
+          <div className="lg:w-[33%]">
+            <p className="lg:text-xl font-bold mb-3">영업시간</p>
+            <div className="max-sm:text-sm">
+              {" "}
+              {formatUsetime(detail.usetime)}
+            </div>
             {detail?.restdate && (
-              <p className="text-[#EB2528]/70 text-sm mt-1">
+              <p className="text-[#EB2528]/70 text-xs lg:text-sm mt-1">
                 {detail?.restdate}
               </p>
             )}
@@ -65,15 +68,15 @@ export default function Section_1({ data, detail }) {
         )}
 
         {detail?.infocenter && (
-          <div className="w-[33%]">
-            <p className="text-xl font-bold mb-3">번호</p>
-            <p>{detail?.infocenter}</p>
+          <div className="lg:w-[33%]">
+            <p className="lg:text-xl font-bold mb-3">번호</p>
+            <p className="max-sm:text-sm">{detail?.infocenter}</p>
           </div>
         )}
 
-        <div className="w-[33%]">
-          <p className="text-xl font-bold mb-3">주소</p>
-          <p>{data.addr1}</p>
+        <div className="lg:w-[33%]">
+          <p className="lg:text-xl font-bold mb-3">주소</p>
+          <p className="max-sm:text-sm">{data.addr1}</p>
         </div>
       </div>
     </div>
