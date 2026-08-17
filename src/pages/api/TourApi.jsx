@@ -1,6 +1,6 @@
 const baseUrl = "https://apis.data.go.kr/B551011/KorService2/";
 const relatedBaseUrl = "https://apis.data.go.kr/B551011/TarRlteTarService1/";
-const durunubiBaseUrl = "http://apis.data.go.kr/B551011/Durunubi/";
+const durunubiBaseUrl = "https://apis.data.go.kr/B551011/Durunubi/";
 const options = {
   method: "GET",
   headers: {
