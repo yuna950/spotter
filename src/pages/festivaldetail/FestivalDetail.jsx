@@ -23,8 +23,9 @@ export default function FestivalDetail() {
         const item = festivalDetail?.response?.body?.items?.item[0];
         setFestivalData(item);
 
+        // 축제 추가 상세정보
         const detail = await getdetail(contentid, 15);
-        const detailItem = detail?.response?.body?.items?.item[0];
+        const detailItem = detail?.response?.body?.items?.item?.[0];
         setDetailData(detailItem);
 
         // img

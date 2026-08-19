@@ -30,7 +30,7 @@ const fetchTour = async (endpoint, params = {}) => {
 export const getLdongs = () => {
   return fetchTour("ldongCode2", {
     lDongListYn: "Y",
-    numOfRows: 1000,
+    numOfRows: 500,
   });
 };
 
@@ -46,7 +46,7 @@ export const getdetail = (contentId, contentTypeId = 12) => {
   return fetchTour("detailIntro2", {
     contentId,
     contentTypeId,
-    numOfRows: 100,
+    numOfRows: 1,
     pageNo: 1,
   });
 };
@@ -54,7 +54,7 @@ export const getdetail = (contentId, contentTypeId = 12) => {
 // 지역기반 관광지 호출
 export const getAreaTour = (regionCode, contentTypeId = 12, signguCode) => {
   return fetchTour("areaBasedList2", {
-    numOfRows: 100,
+    numOfRows: 50,
     pageNo: 1,
     arrange: "C",
     contentTypeId,
@@ -66,7 +66,7 @@ export const getAreaTour = (regionCode, contentTypeId = 12, signguCode) => {
 // 지역기반 행사 호출
 export const getAreaFestival = (regionCode, signguCode) => {
   return fetchTour("areaBasedList2", {
-    numOfRows: 100,
+    numOfRows: 50,
     pageNo: 1,
     arrange: "C",
     contentTypeId: 15,
@@ -78,7 +78,7 @@ export const getAreaFestival = (regionCode, signguCode) => {
 // 행사 정보 조회
 export const getFestival = () => {
   return fetchTour("searchFestival2", {
-    numOfRows: 10000,
+    numOfRows: 100,
     pageNo: 1,
     arrange: "C",
     eventStartDate: "20260101",

@@ -36,7 +36,7 @@ export default function Section_3({ tourData, festivalData }) {
         >
           {festivalData?.map((festival) => (
             <SwiperSlide key={festival.contentid} className="">
-              <div className="w-[70%] xl:w-[1000px] m-auto border border-gray-800 rounded-2xl p-[30px] lg:p-[50px] flex flex-col lg:flex-row gap-[30px] lg:gap-[100px] m-auto">
+              <div className="w-[70%] xl:w-[1200px] m-auto border border-gray-800 rounded-2xl p-[30px] lg:p-[50px] flex flex-col lg:flex-row gap-[30px] lg:gap-[100px] m-auto">
                 <div className="w-full lg:w-[40%] bg-gray-300 rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src={festival.firstimage}

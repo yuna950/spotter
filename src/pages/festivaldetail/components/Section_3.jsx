@@ -10,7 +10,7 @@ export default function Section_3({ data }) {
   return (
     <div>
       {data?.img && (
-        <div className="mt-[150px] relative">
+        <div className=" mt-[150px] relative">
           <Swiper
             spaceBetween={10}
             slidesPerView={2}
