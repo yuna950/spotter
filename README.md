@@ -51,33 +51,31 @@ SPOTTER에서는
 
 ### Frontend
 
-기술 사용 목적
-React UI 구성 및 컴포넌트 기반 개발
-JavaScript 데이터 처리 및 기능 구현
-Tailwind CSS 반응형 UI 및 스타일링
-React Router 페이지 라우팅
-Swiper 콘텐츠 슬라이드
-Lucide / React Icons 아이콘 UI
+| 기술 | 사용 목적 |
+| React | UI 구성 및 컴포넌트 기반 개발 |
+| JavaScript | 데이터 처리 및 기능 구현 |
+| Tailwind CSS | 반응형 UI 및 스타일링 |
+| React Router | 페이지 라우팅 |
+| Swiper | 콘텐츠 슬라이드 |
+| Lucide / React Icons | 아이콘 UI |
 
 ### API
 
-한국관광공사 국문 관광정보 서비스 API
-지역코드 API
-지역기반 관광정보 API
-관광지 상세정보 API
-축제/행사 정보 API
-
---
+- 한국관광공사 국문 관광정보 서비스 API
+- 지역코드 API
+- 지역기반 관광정보 API
+- 관광지 상세정보 API
+- 축제/행사 정보 API
 
 ## API 활용
 
-API 활용
-ldongCode2 지역 코드 및 지역명 매칭
-areaBasedList2 지역별 관광지 / 축제 조회
-detailCommon2 관광지 상세정보 조회
-searchFestival2 전국 축제 및 행사 조회
+| API 활용 |
+| ldongCode2 | 지역 코드 및 지역명 매칭 |
+| areaBasedList2 | 지역별 관광지 / 축제 조회 |
+| detailCommon2 | 관광지 상세정보 조회 |
+| searchFestival2 | 전국 축제 및 행사 조회 |
 
---
+---
 
 ## 느낀점 & 배운점
 
